@@ -1,0 +1,8 @@
+mat-form-field, button {
+    width: 100%;
+}
+
+mat-checkbox {
+    margin-top: var(--small-margin);
+    margin-bottom: var(--large-margin);
+}

@@ -1,0 +1,62 @@
+mat-form-field, button:not(#topic-title-header button) {
+    width: 100%;
+}
+
+li {
+    padding: 10px;
+    border: 2px solid grey;
+}
+
+li:not(li:last-child) {
+    margin-bottom: var(--small-margin);
+}
+
+ul {
+    margin-bottom: var(--large-margin);
+}
+
+#message-form-button {
+    margin-top: var(--small-margin);
+}
+
+#topic-title-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#topic-infos {
+    margin-bottom: var(--small-margin);
+}
+
+.currentuser {
+    color: royalblue;
+}
+
+.otheruser {
+    color: rgb(27, 116, 0);
+}
+
+.action-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    height: 50px;
+}
+
+.action-buttons-admin-container {
+    display: flex;
+    justify-content: space-between;
+    width: 130px;
+    height: 50px;
+}
+
+.action-buttons-container button:not(.action-buttons-container button:last-child) {
+    margin: 0 var(--small-margin);
+}
+
+.boite {
+    display: flex;
+    justify-content: space-between;
+}
+
+
