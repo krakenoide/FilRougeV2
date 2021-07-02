@@ -1,39 +1,8 @@
-:root {
-    --large-margin: 40px;
-    --small-margin: 20px;
-    --primary-color: #3F51B5;
-    --accent-color: #D81B60;
-    --warn-color: #B71C1C;
-}
-
-body {
-    margin: 40px;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-h2 {
+/*Toute la fenetre*/
+* {
     margin: 0;
-    font-weight: normal;
-}
-
-h3 {
-    margin: 0;
-    font-weight: normal;
-    font-size: 1em;
-    margin-bottom: var(--small-margin);
-}
-
-p {
-    margin: 0;
-}
-
-a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-ul {
-    list-style-type: none;
     padding: 0;
-    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
 }
