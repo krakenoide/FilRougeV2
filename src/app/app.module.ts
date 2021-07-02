@@ -21,14 +21,9 @@ import { LoggedinpageComponent } from './components/loggedinpage/loggedinpage.co
 import { DialogConfirmComponent } from './dialogs/dialog-confirm.component';
 
 /* Pipes */
-import { TopicInfosPipe } from './pipes/TopicInfos.pipe';
-import { MessageInfosPipe } from './pipes/MessageInfos.pipe';
-import { MessageStylePipe } from './pipes/MessageStyle.pipe';
 
 /* Services */
 import { UsersService } from './services/UsersService';
-import { TopicsService } from './services/TopicsService';
-import { MessagesService } from './services/MessagesService';
 
 /* Angular Material */
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -46,9 +41,6 @@ import { MatDialogModule } from '@angular/material/dialog';
         SignInComponent,
         LogoutComponent,
         LoggedinpageComponent,
-        TopicInfosPipe,
-        MessageInfosPipe,
-        MessageStylePipe,
         DialogConfirmComponent
     ],
     imports: [
@@ -65,9 +57,7 @@ import { MatDialogModule } from '@angular/material/dialog';
         MatDialogModule
     ],
     providers: [
-        UsersService,
-        TopicsService,
-        MessagesService
+        UsersService
     ],
     bootstrap: [AppComponent]
 })
