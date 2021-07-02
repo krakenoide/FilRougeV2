@@ -11,13 +11,11 @@ import { routes } from './routes';
 
 /* Components */
 import { AppComponent } from './app.component';
-import { HomepageComponent } from './components/homepage/homepage.component';
-import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { UnloggedpageComponent } from './components/unloggedpage/unloggedpage.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { LogoutComponent } from './components/logout/logout.component';
-import { TopicComponent } from './components/topic/topic.component';
-import { UsersPageComponent } from './components/users-page/users-page.component';
+import { LoggedinpageComponent } from './components/loggedinpage/loggedinpage.component';
 
 /* Dialogs */
 import { DialogConfirmComponent } from './dialogs/dialog-confirm.component';
@@ -43,17 +41,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
     declarations: [
         AppComponent,
-        HomepageComponent,
-        EditUserComponent,
+        UnloggedpageComponent,
         LoginComponent,
         SignInComponent,
         LogoutComponent,
-        TopicComponent,
+        LoggedinpageComponent,
         TopicInfosPipe,
         MessageInfosPipe,
         MessageStylePipe,
-        DialogConfirmComponent,
-        UsersPageComponent
+        DialogConfirmComponent
     ],
     imports: [
         BrowserModule,
