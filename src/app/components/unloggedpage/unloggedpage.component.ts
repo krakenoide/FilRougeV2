@@ -9,22 +9,6 @@ import { Router } from '@angular/router';
     templateUrl: './unloggedpage.component.html',
     styleUrls: ['./unloggedpage.component.css']
 })
-export class UnloggedpageComponent implements OnInit {
+export class UnloggedpageComponent {
     connectedUser: User;
-    connectedUserSubscription: Subscription;
-
-    constructor(
-        private usersService: UsersService,
-        private router: Router
-    ) { }
-
-    ngOnInit(): void {
-
-        this.usersService.connectedUserSubject.subscribe((user: User) => {
-            this.connectedUser = user;
-        });
-
-        this.usersService.emitConnectedUser();
-
-    }
 }

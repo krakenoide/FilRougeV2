@@ -32,9 +32,7 @@ export class LoginComponent implements OnInit {
         if (this.form.valid) {
             const user: User = {
                 username: this.form.value.username,
-                password: this.form.value.password,
-                messages: [],
-                topics: []
+                password: this.form.value.password
             }
 
             this.usersService.login(user).subscribe((user: User) => {

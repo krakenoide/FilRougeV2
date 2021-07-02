@@ -35,10 +35,7 @@ export class SignInComponent implements OnInit {
         if (this.form.valid) {
             const user: User = {
                 username: this.form.value.username,
-                password: this.form.value.password,
-                passwordConfirm: this.form.value.passwordConfirm,
-                messages: [],
-                topics: []
+                password: this.form.value.password
             }
     
             this.usersService.createNewUser(user).subscribe((user: User) => {

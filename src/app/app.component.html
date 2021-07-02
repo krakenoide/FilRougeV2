@@ -1,6 +1,7 @@
+<section id="home" class="home-container">
 <header>
-    <nav>
-        <ul>
+        <img src="../../images/logo.png" alt="logo" class="logo">
+        <ul class="nav-links">
             <li *ngIf="!connectedUser" routerLinkActive="nav-active"><a href="#">Home</a></li>
             <li *ngIf="!connectedUser" routerLinkActive="nav-active"><a href="#most-listened">Most Listened</a></li>
             <li *ngIf="!connectedUser" routerLinkActive="nav-active"><a routerLink="login">Login</a></li>
@@ -10,10 +11,12 @@
             <li *ngIf="connectedUser" routerLinkActive="nav-active"><a routerLink="add-music">Add Music</a></li>
             <li *ngIf="connectedUser" routerLinkActive="nav-active"><a routerLink="add-playlist">Add Playlist</a></li>
             <li *ngIf="connectedUser" routerLinkActive="nav-active"><a routerLink="logout">Log Out</a></li>
-            
         </ul>
-    </nav>
 </header>
+<div class="landing">
+    <h1 class="big-title">The music all around you !</h1>
+</div>
+</section>
 
 <main>
     <router-outlet></router-outlet>
