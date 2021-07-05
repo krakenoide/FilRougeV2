@@ -1,10 +1,11 @@
 <section id="home" class="home-container">
 <header>
-        <img src="../../images/logo.png" alt="logo" class="logo">
+        <img src="../assets/images/logo.png" alt="logo" class="logo">
         <ul class="nav-links">
             <li *ngIf="!connectedUser" routerLinkActive="nav-active"><a href="#">Home</a></li>
             <li *ngIf="!connectedUser" routerLinkActive="nav-active"><a href="#most-listened">Most Listened</a></li>
             <li *ngIf="!connectedUser" routerLinkActive="nav-active"><a routerLink="login">Login</a></li>
+            <li *ngIf="!connectedUser" routerLinkActive="nav-active"><a routerLink="sign-in">Sign In</a></li>
             <li *ngIf="connectedUser" routerLinkActive="nav-active"><a href="#MySongs">My Songs</a></li>
             <li *ngIf="connectedUser" routerLinkActive="nav-active"><a href="#MyArtists">My Artists</a></li>
             <li *ngIf="connectedUser" routerLinkActive="nav-active"><a href="#MyAlbums">My Albums</a></li>
@@ -13,9 +14,6 @@
             <li *ngIf="connectedUser" routerLinkActive="nav-active"><a routerLink="logout">Log Out</a></li>
         </ul>
 </header>
-<div class="landing">
-    <h1 class="big-title">The music all around you !</h1>
-</div>
 </section>
 
 <main>

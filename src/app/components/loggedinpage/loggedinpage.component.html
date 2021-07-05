@@ -1,0 +1,115 @@
+<div class="searchbar">
+    <form action="searchMorceau" method="POST">
+        <input class="search" placeholder="Type here to find songs..."
+            type="search" name="search"> <input class="button"
+            type="submit" value="Search">
+    </form>
+</div>
+
+<section id="MySongs" class="most-listened-container">
+    <h1 class="section-title">My Songs</h1>
+    
+    <div class="best-products">
+
+        <span *ngFor="let morceau of listeMorceaux">
+
+            <div class="product-box no-grid">
+            <span *ngIf="morceau.album.couverture===null">
+            <img class="couverture" src="../../../assets/images/nos_meilleures_ventes/0.jpg">
+            </span>
+            <span *ngIf="morceau.album.couverture!=null">
+            <img class="couverture" src="../../../assets/images/nos_meilleures_ventes/0.jpg">
+            </span>
+                <a href="#" class="middle image"></a>
+                <div class="product-bio">
+                        <h1 class="product-name">{{morceau.nomMorceau}}</h1>
+                        <h3 class="product-amount">{{morceau.artiste}}</h3>
+                    </div>
+                </div>
+            </span>
+
+
+        <span *ngIf="listeMorceaux.length===null">
+            <div class="product-box no-grid product0">
+                <a href="#" class="middle image"></a>
+                <div class="product-bio">
+                    <h1 class="product-name">No Songs</h1>
+                </div>
+            </div>
+        </span>
+
+    </div>
+</section>
+
+<section id="MyArtists" class="most-listened-container">
+    <h1 class="section-title">My Artists</h1>
+            
+    <div class="best-products">
+
+        <span *ngFor="let artiste of listeArtistes">
+
+            <div class="product-box no-grid">
+            <span *ngIf="artiste.photoArtiste===null">
+            <img class="couverture" src="../../../assets/images/nos_meilleures_ventes/0.jpg">
+            </span>
+            <span *ngIf="artiste.photoArtiste!=null">
+            <img class="couverture" src="../../../assets/images/nos_meilleures_ventes/0.jpg">
+            </span>
+                <a href="#" class="middle image"></a>
+                <div class="product-bio">
+                        <h1 class="product-name">{{artiste.nomArtiste}}</h1>
+                    </div>
+                </div>
+            </span>
+
+
+        <span *ngIf="listeArtistes.length===null">
+            <div class="product-box no-grid product0">
+                <a href="#" class="middle image"></a>
+                <div class="product-bio">
+                    <h1 class="product-name">No Artists</h1>
+                </div>
+            </div>
+        </span>
+
+    </div>
+</section>
+
+<section id="MyAlbums" class="most-listened-container">
+    <h1 class="section-title">My Albums</h1>
+    
+    <div class="best-products">
+
+        <span *ngFor="let album of listeAlbums">
+
+            <div class="product-box no-grid">
+            <span *ngIf="album.couverture===null">
+            <img class="couverture" src="../../../assets/images/nos_meilleures_ventes/0.jpg">
+            </span>
+            <span *ngIf="album.couverture!=null">
+            <img class="couverture" src="../../../assets/images/nos_meilleures_ventes/0.jpg">
+            </span>
+                <a href="#" class="middle image"></a>
+                <div class="product-bio">
+                        <h1 class="product-name">{{album.nomAlbum}}</h1>
+                    </div>
+                </div>
+            </span>
+
+
+        <span *ngIf="listeAlbums.length===null">
+            <div class="product-box no-grid product0">
+                <a href="#" class="middle image"></a>
+                <div class="product-bio">
+                    <h1 class="product-name">No Albums</h1>
+                </div>
+            </div>
+        </span>
+
+    </div>
+</section>
+
+<footer id="contact-us" class="footer">
+    <span class="copyrights">&copy; 2021 - Please do not copy</span>
+    <a href="#" class="contact">Back to top page</a>
+</footer>
