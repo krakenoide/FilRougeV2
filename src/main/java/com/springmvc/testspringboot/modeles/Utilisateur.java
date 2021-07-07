@@ -39,6 +39,8 @@ public class Utilisateur {
 	@JsonIgnore
 	List <Playlist> playlists;
 	
+	
+	
 	@Transient
 	@JsonIgnore
 	String nom;
