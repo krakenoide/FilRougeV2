@@ -8,7 +8,6 @@ import com.springmvc.testspringboot.modeles.Artiste;
 import com.springmvc.testspringboot.modeles.Genre;
 import com.springmvc.testspringboot.modeles.Morceau;
 import com.springmvc.testspringboot.modeles.Playlist;
-import com.springmvc.testspringboot.modeles.Son;
 import com.springmvc.testspringboot.modeles.Utilisateur;
 
 public interface IServices{
@@ -48,12 +47,7 @@ public interface IServices{
 	public void updatePlaylist(Playlist m);
 	public void savePlaylist(Playlist m);
 	
-	// Interface Son
-	public List<Son> getAllSons();
-	public Optional<Son> getSonWithID(int id);
-	public void deleteSon(int id);
-	public void updateSon(Son m);
-	public void saveSon(Son m);
+
 	
 	// Interface Utilisateur
 	public List<Utilisateur> getAllUtilisateurs();

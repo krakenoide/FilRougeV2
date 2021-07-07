@@ -33,12 +33,10 @@ public class Album {
 	String nomAlbum;
 	@Column(name="date_sortie")
 	String date_sortie;	
-	@Lob
-	@Column(name = "couverture", columnDefinition="BLOB")
-	@JsonIgnore
-	private byte [] couverture;
 
-	
+	@Column(name = "url_couverture")
+	private String couverture;
+
 	@OneToMany(mappedBy="album",fetch=FetchType.LAZY,cascade={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JsonIgnore
 	private List<Morceau> morceaux;
@@ -87,11 +85,11 @@ public class Album {
 		this.morceaux = morceaux;
 	}
 
-	public byte[] getCouverture() {
+	public String getCouverture() {
 		return couverture;
 	}
 
-	public void setCouverture(byte[] couverture) {
+	public void setCouverture(String couverture) {
 		this.couverture = couverture;
 	}
 

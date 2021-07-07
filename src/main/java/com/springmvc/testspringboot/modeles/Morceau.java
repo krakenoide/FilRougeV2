@@ -50,10 +50,8 @@ public class Morceau {
 	@Column(name = "Duree")
 	private int duree;
 
-	@OneToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},fetch=FetchType.LAZY)
-	@JoinColumn(name = "id_son")
-	@JsonIgnore
-	private Son son;
+	@Column(name = "url_son")
+	private String urlSon;
 
 	@Transient
 	@Pattern(regexp="[A-Za-z0-9 /]{0,40}",message="Veuillez ne pas utiliser de caracteres speciaux !")
@@ -146,14 +144,13 @@ public class Morceau {
 	public void setNomAlbum(String nomAlbum) {
 		this.nomAlbum = nomAlbum;
 	}
-
 	
-	public Son getSon() {
-		return son;
+	public String getUrlSon() {
+		return urlSon;
 	}
 
-	public void setSon(Son son) {
-		this.son = son;
+	public void setUrlSon(String urlSon) {
+		this.urlSon = urlSon;
 	}
 
 

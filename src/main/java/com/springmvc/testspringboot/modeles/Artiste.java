@@ -27,12 +27,9 @@ public class Artiste {
 	@Column(name="nom")
 	private String nomArtiste;
 	
-	@Lob
-	@Column(name = "photo", columnDefinition="BLOB")
-	@JsonIgnore
-	private byte [] photoArtiste;
+	@Column(name = "url_photo")
+	private String photoArtiste;
 
-	
 	@OneToMany(mappedBy="artiste",fetch=FetchType.LAZY,cascade={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JsonIgnore
 	private List<Album> albums;
@@ -76,11 +73,11 @@ public class Artiste {
 		this.morceaux = morceaux;
 	}
 
-	public byte[] getPhotoArtiste() {
+	public String getPhotoArtiste() {
 		return photoArtiste;
 	}
 
-	public void setPhotoArtiste(byte[] photoArtiste) {
+	public void setPhotoArtiste(String photoArtiste) {
 		this.photoArtiste = photoArtiste;
 	}
 

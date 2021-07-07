@@ -12,14 +12,12 @@ import com.springmvc.testspringboot.jpa.ArtisteRepository;
 import com.springmvc.testspringboot.jpa.GenreRepository;
 import com.springmvc.testspringboot.jpa.MorceauRepository;
 import com.springmvc.testspringboot.jpa.PlaylistRepository;
-import com.springmvc.testspringboot.jpa.SonRepository;
 import com.springmvc.testspringboot.jpa.UtilisateurRepository;
 import com.springmvc.testspringboot.modeles.Album;
 import com.springmvc.testspringboot.modeles.Artiste;
 import com.springmvc.testspringboot.modeles.Genre;
 import com.springmvc.testspringboot.modeles.Morceau;
 import com.springmvc.testspringboot.modeles.Playlist;
-import com.springmvc.testspringboot.modeles.Son;
 import com.springmvc.testspringboot.modeles.Utilisateur;
 
 @Service
@@ -37,8 +35,7 @@ public class Services implements IServices{
 	private PlaylistRepository playlistJpa;
 	@Autowired 
 	private UtilisateurRepository utilisateurJpa;
-	@Autowired 
-	private SonRepository sonJpa;
+	
 		
 	// ################ Morceau ##################
 	
@@ -173,33 +170,6 @@ public class Services implements IServices{
 	@Transactional
 	public void savePlaylist(Playlist m) {
 		playlistJpa.save(m);
-	}
-	
-	// ################ Son ##################
-	
-	@Transactional
-	public List<Son> getAllSons(){
-		return sonJpa.findAll();
-	}
-	
-	@Transactional
-	public Optional<Son> getSonWithID(int id){
-		return sonJpa.findById(id);
-	}
-	
-	@Transactional
-	public void deleteSon(int id){
-		sonJpa.deleteById(id);
-	}
-	
-	@Transactional
-	public void updateSon(Son m){
-		sonJpa.save(m);
-	}
-	
-	@Transactional
-	public void saveSon(Son m) {
-		sonJpa.save(m);
 	}
 	
 	// ################ Utilisateur ##################
