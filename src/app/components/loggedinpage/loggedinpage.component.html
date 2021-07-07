@@ -1,10 +1,18 @@
-<div class="searchbar">
-    <form action="searchMorceau" method="POST">
-        <input class="search" placeholder="Type here to find songs..."
-            type="search" name="search"> <input class="button"
-            type="submit" value="Search">
-    </form>
-</div>
+<form>
+    <mat-form-field class="autocomplete" appearance="fill">
+      <mat-label class="search">Search</mat-label>
+      <input class="input" type="text"
+             aria-label="Search"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
 
 <section id="MySongs" class="most-listened-container">
     <h1 class="section-title">My Songs</h1>
