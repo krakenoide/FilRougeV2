@@ -1,39 +1,31 @@
 /*Header*/
 .home-container {
     background: url("../assets/images/bg.jpg");
-    min-height: 70px;
     background-size: cover;
     background-position: center;
-    opacity: 0.8;
+    position: fixed;
+    z-index: 12;
+    width: 100%;
 }
 
 .header {
-    position: absolute;
     width: 100%;
-    display: flex;
-    align-items: center;
 }
 
 .logo {
-    width: 7%;
-    min-height: 50px;
-    min-width: 50px;
-    margin-top: 1%;
-    margin-left: 1%;
+    width: 4%;
+    align-self: center;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    position: fixed;
-    top: 0;
-    left: 6%;
-    z-index: 10;
+    justify-content: flex-start;
 }
 
-.nav-links li {
-    margin-left: 30%;
-    margin-top: 10%;
+li {
+    align-self: center;
+    margin: 0 2% 0 2%;
 }
 
 .nav-links a {
@@ -41,13 +33,4 @@
     font-weight: 500;
     color: white;
     text-decoration: none;
-    position: relative;
-    display: block;
-    transition: transform 0.4s;
-}
-
-.nav-links-animation {
-	display:inline-block;
-	z-index: 10;
-	left:0;
 }

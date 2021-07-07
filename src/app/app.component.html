@@ -1,9 +1,9 @@
 <section id="home" class="home-container">
 <header>
-        <img src="../assets/images/logo.png" alt="logo" class="logo">
+        
         <ul class="nav-links">
+            <img src="../assets/images/logo.png" alt="logo" class="logo">
             <li *ngIf="!connectedUser" routerLinkActive="nav-active"><a href="#">Home</a></li>
-            <li *ngIf="!connectedUser" routerLinkActive="nav-active"><a href="#most-listened">Most Listened</a></li>
             <li *ngIf="!connectedUser" routerLinkActive="nav-active"><a routerLink="login">Login</a></li>
             <li *ngIf="!connectedUser" routerLinkActive="nav-active"><a routerLink="sign-in">Sign In</a></li>
             <li *ngIf="connectedUser" routerLinkActive="nav-active"><a href="#MySongs">My Songs</a></li>

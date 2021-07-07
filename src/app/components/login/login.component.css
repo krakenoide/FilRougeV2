@@ -1,3 +1,7 @@
+form {
+    padding-top: 6%;
+}
+
 mat-form-field, button {
     width: 98%;
     margin-left: 1%;

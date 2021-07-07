@@ -1,15 +1,15 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-form-field>
         <mat-label>Username</mat-label>
-        <input type="text" matInput required formControlName="username">
+        <input type="text" matInput >
     </mat-form-field>
 
     <mat-form-field>
         <mat-label>Password</mat-label>
-        <input type="password" matInput required formControlName="password">
+        <input type="password" matInput>
     </mat-form-field>
 
-    <mat-checkbox color="primary" formControlName="rememberMe">Remember Me</mat-checkbox>
+    <mat-checkbox color="primary">Remember Me</mat-checkbox>
 
     <button mat-raised-button color="primary">Login</button>
 </form>

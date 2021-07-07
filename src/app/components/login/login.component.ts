@@ -27,6 +27,7 @@ export class LoginComponent {
     }
 
     onSubmit(): void {
+        /*
             const user: User = {
                 username: this.form.value.username,
                 password: this.form.value.password
@@ -36,10 +37,10 @@ export class LoginComponent {
                 
                     this.usersService.connectedUser = user;
                     this.usersService.emitConnectedUser();
-            
+        */
                 this.router.navigate(['loggedin']);
         
-            })
+
     }
 
 }

@@ -11,15 +11,6 @@ export class AppComponent implements OnInit{
     navigation:any;
 
     ngOnInit(): void {
-        this.navigation=document.querySelector("ul");
-
-        window.addEventListener("scroll", () => {
-	    if (window.scrollY>70){
-		    this.navigation.classList.add("nav-links-animation");
-	    } else {
-		    this.navigation.classList.remove("nav-links-animation");
-	    }
-        });
     }
 
 }
