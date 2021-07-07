@@ -23,6 +23,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name="users")
 public class Utilisateur {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // permet d'autoincrementer les id en mettant des null
+	@Column(name = "id") // car mon nom de colomne est le meme que mon attribut
+	private int id;
+		
+
 	@NotNull(message ="*") //if we try to make a Contact without giving it a new name i'll send an error
 	@Pattern(regexp="[A-Za-z0-9 /]{0,40}",message="Veuillez ne pas utiliser de caracteres speciaux !")
 	@Column(name="username")
@@ -30,6 +35,7 @@ public class Utilisateur {
 	@NotNull(message ="*") //if we try to make a Contact without giving it a new name i'll send an error
 	@Size(min=5,message="Votre Mot de Passe doit contenir 5 caracteres au minimum !")
 	@Column(name="password")
+	@JsonIgnore
 	String motDePasse; 
 	@NotNull(message ="*") //if we try to make a Contact without giving it a new name i'll send an error
 	@Column(name="authorities")
@@ -56,7 +62,14 @@ public class Utilisateur {
 	public Utilisateur() {
 	}
 
-	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getNomDeCompte() {
 		return nomDeCompte;
 	}
@@ -65,7 +78,6 @@ public class Utilisateur {
 	public void setNomDeCompte(String nomDeCompte) {
 		this.nomDeCompte = nomDeCompte;
 	}
-
 
 	public String getMotDePasse() {
 		return motDePasse;

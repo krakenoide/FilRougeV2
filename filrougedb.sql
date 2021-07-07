@@ -57,11 +57,12 @@ CREATE TABLE morceaux (
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
+   id int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(128) NOT NULL,
   `enabled` tinyint(1) NOT NULL,
   `authorities`  varchar(128) NOT NULL,
-  PRIMARY KEY (`username`)
+   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 DROP TABLE IF EXISTS playlist;
@@ -69,10 +70,10 @@ DROP TABLE IF EXISTS playlist;
 Create Table playlist(
  id int(11) NOT NULL AUTO_INCREMENT,
  titre varchar(128) default "playlist",
- createur varchar(50) NOT NULL,
+ createur int(11) NOT NULL,
 PRIMARY KEY (id),
 KEY FK_UTILISATEURS_idx (createur),
-  CONSTRAINT FK_UTILISATEURS FOREIGN KEY (createur) REFERENCES users (username) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT FK_UTILISATEURS FOREIGN KEY (createur) REFERENCES users (id) ON DELETE NO ACTION ON UPDATE NO ACTION
 )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 Insert into artistes(id,nom,url_photo) Values (1,'AC/DC','https://drive.google.com/uc?export=view&id=1B5JxRxksapCV1v65JPHpGdqVfzbYO32z'),(2,'EMINEM','https://drive.google.com/uc?export=view&id=1Jcv9535ymvtYrqM3yvOc6wzLnhqIvvFR');

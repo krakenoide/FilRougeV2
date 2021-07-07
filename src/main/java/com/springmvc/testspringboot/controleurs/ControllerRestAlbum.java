@@ -19,70 +19,54 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.springmvc.testspringboot.modeles.Album;
 import com.springmvc.testspringboot.modeles.Artiste;
-import com.springmvc.testspringboot.modeles.Morceau;
 import com.springmvc.testspringboot.services.IServices;
 
 @RestController
-@RequestMapping("/api/morceau") 
+@RequestMapping("/api/album") 
 @CrossOrigin 
-public class ControllerRestMorceau {
+public class ControllerRestAlbum {
 	
 	@Autowired
 	private IServices serv;
 	
 	@GetMapping("")
-	public List<Morceau> getMorceau(){
-		return serv.getAllMorceaux();
+	public List<Album> getAlbum(){
+		return serv.getAllAlbums();
 	}
 	
 	@GetMapping("/{id}")
-	public Optional<Morceau> getMorceau(@PathVariable int id){
-		return serv.getMorceauWithID(id);
+	public Optional<Album> getAlbum(@PathVariable int id){
+		return serv.getAlbumWithID(id);
 	}
 	
 	@PostMapping(value ="/")
-	public Optional<Morceau> postMorceau(@RequestBody String pBody) throws JsonMappingException, JsonProcessingException {
+	public Optional<Album> postAlbum(@RequestBody String pBody) throws JsonMappingException, JsonProcessingException {
 		ObjectMapper objectMapper = new ObjectMapper();
-		Morceau m = objectMapper.readValue(pBody,Morceau.class);
+		Album m = objectMapper.readValue(pBody,Album.class);
 		Optional<Artiste> tempArtiste = serv.getArtisteWithID(m.getArtiste().getId());
-		Optional<Album> tempAlbum = serv.getAlbumWithID(m.getAlbum().getId());
 		if (tempArtiste != null) {
 			m.setArtiste(tempArtiste.get());
 		}
-		if (tempAlbum != null) {
-			if (tempArtiste != null) {
-				tempAlbum.get().setArtiste(tempArtiste.get());
-			}
-			m.setAlbum(tempAlbum.get());
-		}	
-				
-		serv.saveMorceau(m);
-		return serv.getMorceauWithID(m.getId());
+		
+		serv.saveAlbum(m);
+		return serv.getAlbumWithID(m.getId());
 	}
 	
 	@PatchMapping(value ="/")
-	public Optional<Morceau> patchMorceau(@RequestBody String pBody) throws JsonMappingException, JsonProcessingException {
+	public Optional<Album> patchAlbum(@RequestBody String pBody) throws JsonMappingException, JsonProcessingException {
 		ObjectMapper objectMapper = new ObjectMapper();
-		Morceau m = objectMapper.readValue(pBody,Morceau.class);
+		Album m = objectMapper.readValue(pBody,Album.class);
 		Optional<Artiste> tempArtiste = serv.getArtisteWithID(m.getArtiste().getId());
-		Optional<Album> tempAlbum = serv.getAlbumWithID(m.getAlbum().getId());
 		if (tempArtiste != null) {
 			m.setArtiste(tempArtiste.get());
 		}
-		if (tempAlbum != null) {
-			if (tempArtiste != null) {
-				tempAlbum.get().setArtiste(tempArtiste.get());
-			}
-			m.setAlbum(tempAlbum.get());
-		}	
-				
-		serv.saveMorceau(m);
-		return serv.getMorceauWithID(m.getId());
+		serv.saveAlbum(m);
+		return serv.getAlbumWithID(m.getId());
 	}
 	
 	@DeleteMapping("/{id}")
-	public void deleteMorceau(@PathVariable int id){
-		serv.deleteMorceau(id);
+	public void deleteAlbum(@PathVariable int id){
+		serv.deleteAlbum(id);
 	}
 		
 }
