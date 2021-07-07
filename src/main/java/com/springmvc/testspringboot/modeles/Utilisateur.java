@@ -44,9 +44,7 @@ public class Utilisateur {
 	@OneToMany(mappedBy="createur", cascade= {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JsonIgnore
 	List <Playlist> playlists;
-	
-	
-	
+		
 	@Transient
 	@JsonIgnore
 	String nom;
