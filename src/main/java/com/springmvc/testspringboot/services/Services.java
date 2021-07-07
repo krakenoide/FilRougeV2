@@ -53,8 +53,8 @@ public class Services implements IServices{
 	}
 	
 	@Transactional
-	public void deleteMorceau(Morceau m){
-		morceauJpa.delete(m);
+	public void deleteMorceau(int id){
+		morceauJpa.deleteById(id);
 	}
 	
 	@Transactional
@@ -80,8 +80,8 @@ public class Services implements IServices{
 	}
 	
 	@Transactional
-	public void deleteAlbum(Album m){
-		albumJpa.delete(m);
+	public void deleteAlbum(int id){
+		albumJpa.deleteById(id);
 	}
 	
 	@Transactional
@@ -94,7 +94,7 @@ public class Services implements IServices{
 		albumJpa.save(m);
 	}
 	
-	// ################ Album ##################
+	// ################ Artiste ##################
 	
 	@Transactional
 	public List<Artiste> getAllArtistes(){
@@ -107,8 +107,8 @@ public class Services implements IServices{
 	}
 	
 	@Transactional
-	public void deleteArtiste(Artiste m){
-		artisteJpa.delete(m);
+	public void deleteArtiste(int id){
+		artisteJpa.deleteById(id);
 	}
 	
 	@Transactional
@@ -134,8 +134,8 @@ public class Services implements IServices{
 	}
 	
 	@Transactional
-	public void deleteGenre(Genre m){
-		genreJpa.delete(m);
+	public void deleteGenre(int id){
+		genreJpa.deleteById(id);
 	}
 	
 	@Transactional
@@ -161,8 +161,8 @@ public class Services implements IServices{
 	}
 	
 	@Transactional
-	public void deletePlaylist(Playlist m){
-		playlistJpa.delete(m);
+	public void deletePlaylist(int id){
+		playlistJpa.deleteById(id);
 	}
 	
 	@Transactional
@@ -188,8 +188,8 @@ public class Services implements IServices{
 	}
 	
 	@Transactional
-	public void deleteSon(Son m){
-		sonJpa.delete(m);
+	public void deleteSon(int id){
+		sonJpa.deleteById(id);
 	}
 	
 	@Transactional
@@ -215,8 +215,8 @@ public class Services implements IServices{
 	}
 	
 	@Transactional
-	public void deleteUtilisateur(Utilisateur m){
-		utilisateurJpa.delete(m);
+	public void deleteUtilisateur(int id){
+		utilisateurJpa.deleteById(id);
 	}
 	
 	@Transactional

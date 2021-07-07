@@ -16,49 +16,49 @@ public interface IServices{
 	// Interface Morceau
 	public List<Morceau> getAllMorceaux();
 	public Optional<Morceau> getMorceauWithID(int id);
-	public void deleteMorceau(Morceau m);
+	public void deleteMorceau(int id);
 	public void updateMorceau(Morceau m);
 	public void saveMorceau(Morceau m);
 	
 	// Interface Artiste
 	public List<Artiste> getAllArtistes();
 	public Optional<Artiste> getArtisteWithID(int id);
-	public void deleteArtiste(Artiste m);
+	public void deleteArtiste(int id);
 	public void updateArtiste(Artiste m);
 	public void saveArtiste(Artiste m);
 	
 	// Interface Album
 	public List<Album> getAllAlbums();
 	public Optional<Album> getAlbumWithID(int id);
-	public void deleteAlbum(Album m);
+	public void deleteAlbum(int id);
 	public void updateAlbum(Album m);
 	public void saveAlbum(Album m);
 	
 	// Interface Genre
 	public List<Genre> getAllGenres();
 	public Optional<Genre> getGenreWithID(int id);
-	public void deleteGenre(Genre m);
+	public void deleteGenre(int id);
 	public void updateGenre(Genre m);
 	public void saveGenre(Genre m);
 	
 	// Interface Playlist
 	public List<Playlist> getAllPlaylists();
 	public Optional<Playlist> getPlaylistWithID(int id);
-	public void deletePlaylist(Playlist m);
+	public void deletePlaylist(int id);
 	public void updatePlaylist(Playlist m);
 	public void savePlaylist(Playlist m);
 	
 	// Interface Son
 	public List<Son> getAllSons();
 	public Optional<Son> getSonWithID(int id);
-	public void deleteSon(Son m);
+	public void deleteSon(int id);
 	public void updateSon(Son m);
 	public void saveSon(Son m);
 	
 	// Interface Utilisateur
 	public List<Utilisateur> getAllUtilisateurs();
 	public Optional<Utilisateur> getUtilisateurWithID(int id);
-	public void deleteUtilisateur(Utilisateur m);
+	public void deleteUtilisateur(int id);
 	public void updateUtilisateur(Utilisateur m);
 	public void saveUtilisateur(Utilisateur m);
 			
