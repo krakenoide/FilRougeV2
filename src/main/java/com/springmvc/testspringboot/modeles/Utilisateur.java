@@ -35,7 +35,7 @@ public class Utilisateur {
 	@Column(name="authorities")
 	String rolesUtilisateur;
 		
-	@OneToMany(mappedBy="createur", cascade= {CascadeType.ALL})
+	@OneToMany(mappedBy="createur", cascade= {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
 	@JsonIgnore
 	List <Playlist> playlists;
 	

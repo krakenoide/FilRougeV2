@@ -27,12 +27,12 @@ public class Morceau {
 	@Column(name = "id") // car mon nom de colomne est le meme que mon attribut
 	private int id;
 
-	@ManyToOne(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},fetch=FetchType.EAGER)
 	@JoinColumn(name = "id_artiste")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Artiste artiste;
 
-	@ManyToOne(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},fetch=FetchType.EAGER)
 	@JoinColumn(name = "id_album")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	private Album album;
@@ -43,14 +43,14 @@ public class Morceau {
 	@Column(name = "Nom")
 	private String nomMorceau;
 
-	@ManyToOne(cascade = CascadeType.ALL,fetch=FetchType.EAGER)
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},fetch=FetchType.EAGER)
 	@JoinColumn(name = "id_genre")
 	private Genre genre;
 
 	@Column(name = "Duree")
 	private int duree;
 
-	@OneToOne(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
+	@OneToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},fetch=FetchType.LAZY)
 	@JoinColumn(name = "id_son")
 	@JsonIgnore
 	private Son son;

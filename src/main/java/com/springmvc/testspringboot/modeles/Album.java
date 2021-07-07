@@ -25,7 +25,7 @@ public class Album {
 	@GeneratedValue(strategy=GenerationType.IDENTITY) //permet d'autoincr�menter les id en mettant des null
 	@Column(name="id") //car mon nom de colomne est le meme que mon attribut
 	int id;
-	@ManyToOne(cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+	@ManyToOne(cascade={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH},fetch = FetchType.LAZY)
 	@JoinColumn(name="id_artiste")
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	Artiste artiste;
